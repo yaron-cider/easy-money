@@ -1,10 +1,8 @@
 name: Lambda Release
 
 on:
-  workflow_run:
-    workflows: ["Release"]
-    types:
-      - completed
+  push:
+  workflow_dispath:
 
 jobs:
   release:
@@ -16,8 +14,6 @@ jobs:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # tag v4.2.2
       with:
         fetch-depth: 0
-
-
 
     - name: Create release tags for Lambda and K8s Init Containers
       run: |
