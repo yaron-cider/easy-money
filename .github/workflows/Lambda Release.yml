@@ -16,7 +16,7 @@ jobs:
         fetch-depth: 0
 
     - name: test
-      run: echo v1-$(id)
+      run: echo ${GITHUB_REF_NAME}
 
     - name: Create release tags for Lambda and K8s Init Containers
       run: |
