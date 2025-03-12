@@ -18,6 +18,9 @@ jobs:
     - name: test
       run: echo ${GITHUB_REF_NAME}
 
+    - name: test 2
+      run: echo ${{ github.ref_name }}
+      
     - name: Create release tags for Lambda and K8s Init Containers
       run: |
         echo v${GITHUB_REF_NAME}
