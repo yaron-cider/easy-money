@@ -15,9 +15,13 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: test
+      run: echo v1-$(id)
+
     - name: Create release tags for Lambda and K8s Init Containers
       run: |
         echo v${GITHUB_REF_NAME}
+        
         RELEASE_TITLE="New Relic Ruby Agent v${GITHUB_REF_NAME}.0"
         RELEASE_TAG="v${GITHUB_REF_NAME}.0_ruby"
         RELEASE_NOTES="Automated release for [Ruby Agent v${GITHUB_REF_NAME}](https://github.com/newrelic/newrelic-ruby-agent/releases/tag/v${GITHUB_REF_NAME})"       
